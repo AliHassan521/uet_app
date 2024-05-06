@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "21015729871",
+    "project_id": "uet-app-7f237",
+    "storage_bucket": "uet-app-7f237.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:21015729871:android:ddb74060ce912a180e49ba",
+        "android_client_info": {
+          "package_name": "com.example.uet_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDps7FVm76IJBkhDXwZ6buxShrpmrA0RSY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
