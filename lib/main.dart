@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:uet_app/admin/admin_page.dart';
+import 'package:uet_app/login.dart';
 import 'package:uet_app/splash_screen.dart';
 import 'package:uet_app/student/student_page.dart';
 
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget {
       home: SplashScreen(),
       routes: {
         '/admin': (context) => AdminPage(),
-        '/student': (context) => StudentPage()
+        '/student': (context) => StudentPage(),
+        '/login': (context) => Login(),
       },
     );
   }

@@ -62,7 +62,7 @@ class _AdminAnnouncementState extends State<AdminAnnouncement> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Event Announcement Page'),
+        title: Text('Admin Announcement Page'),
       ),
       body: Center(
         child: Column(

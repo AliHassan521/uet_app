@@ -211,7 +211,6 @@ class _SignUpState extends State<SignUp> {
         email: email,
         password: password,
       );
-      print('User registered successfully: ${userCredential.user!.uid}');
       // Store additional user data in Firebase if needed
       // For example, you can store the username
       await FirebaseFirestore.instance
@@ -227,16 +226,43 @@ class _SignUpState extends State<SignUp> {
       _controllerPassword.clear();
       _controllerConfirmPassword.clear();
 
-      // Navigate to the student route upon successful registration
-      Navigator.pushNamed(context, '/student');
+      // Show success dialog
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text("Success"),
+            content: Text("Sign up successful"),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text("OK"),
+              ),
+            ],
+          );
+        },
+      );
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'weak-password') {
-        print('The password provided is too weak.');
-      } else if (e.code == 'email-already-in-use') {
-        print('The account already exists for that email.');
-      } else {
-        print('Error: ${e.message}');
-      }
+      // Show error dialog
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text("Error"),
+            content: Text(e.message ?? "An error occurred"),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text("OK"),
+              ),
+            ],
+          );
+        },
+      );
     } catch (e) {
       print('Error: $e');
     }
